@@ -18,11 +18,11 @@ inputs:
 runs:
   using: composite
   steps:
-    - uses: docker://mradrianpl/appimagebuilderfixedurl:1.0
+    - uses: docker://mradrianpl/appimagebuilderfix:1.0
       if: ${{!inputs.command}}
       with:
         args: appimage-builder --recipe=${{inputs.recipe}} ${{inputs.args}}
-    - uses: docker://mradrianpl/appimagebuilderfixedurl:1.0
+    - uses: docker://mradrianpl/appimagebuilderfix:1.0
       if: inputs.command
       with:
         args: ${{inputs.command}}
