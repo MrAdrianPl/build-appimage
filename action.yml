@@ -18,11 +18,11 @@ inputs:
 runs:
   using: composite
   steps:
-    - uses: docker://revealtech/appimage-builder:1.1.2
+    - uses: docker://mradrianpl/appimagebuilderfixedurl:1.0
       if: ${{!inputs.command}}
       with:
         args: appimage-builder --recipe=${{inputs.recipe}} ${{inputs.args}}
-    - uses: docker://revealtech/appimage-builder:1.1.2
+    - uses: docker://mradrianpl/appimagebuilderfixedurl:1.0
       if: inputs.command
       with:
         args: ${{inputs.command}}
